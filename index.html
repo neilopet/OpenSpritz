@@ -49,6 +49,9 @@
                 var optionSelected = $("option:selected", this);
                 var valueSelected = this.value;
                 var input = $('#spritz_me').text();
+                var _words = input.split(' ');
+                var _estReadingTime = _words/valueSelected;
+                $('#estoutput').text('Estimated Reading Time: ' + _estReadingTime + ' minutes');
                 var rez = spritzify(input, '#result', valueSelected);
 
             });
@@ -74,6 +77,8 @@
               <option value="900">900wpm</option>
               <option value="1000">1000wpm</option>
             </select> 
+            
+            <div id="#estoutput"></div>
 
             <h1>A Nice Cup of Tea</h1>
             <h2>George Orwell, 12 January 1946</h2>
